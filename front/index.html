@@ -2,9 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Proyecto clientes</title>
+    <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-    <h1>Hola edmundo</h1>
+    <main class="main">
+        <form class="form">
+            <div class="form__input">
+                <label class="form__label" for="server">Servidor</label>
+                <input id="server" type="text" placeholder="Servidor"/>
+            </div>
+
+            <div class="form__input">
+                <label class="form__label" for="db">Base de datos</label>
+                <input class="form__input" id="db" type="text" placeholder="Base de datos"/>
+            </div>
+
+            <div class="form__input">
+                <label class="form__label" for="login">Inicio de sesion</label>
+                <input id="login" type="text" placeholder="Usuario"/>
+            </div>
+
+            <div class="form__input">
+                <label class="form__label" for="password">Contrasenia</label>
+                <input id="password" type="password" placeholder="Contrasenia"/>
+            </div>
+
+            <div class="form__input">
+                <div class="form__label"></div>
+                <button id="connectBtn" class="form__button" type="submit">Conectar</button>
+            </div>
+
+            <div class="form__input">
+                <div class="form__label"></div>
+                <button id="capturaBtn" disabled class="form__button-mod" type="submit">Captura</button>
+            </div>
+
+            <div class="form__input">
+                <div class="form__label"></div>
+                <button id="consultaBtn" disabled class="form__button-mod" type="submit">Consulta</button>
+            </div>
+            <p id="message"></p>
+        </form>
+    </main>
+    <script type="module" src="./scripts/index.js"></script>
 </body>
 </html>

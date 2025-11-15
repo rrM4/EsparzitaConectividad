@@ -1,0 +1,1 @@
+export const getCustomersQuery = "SELECT * FROM Customers"

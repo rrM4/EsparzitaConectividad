@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Proyecto clientes</title>
+  <link rel="stylesheet" href="../styles.css"/>
+</head>
+<body>
+  <main class="main">
+    <span id="spinner" class="loader"></span>
+    <div id="container" class="noVisible view">
+      <form style="width: 500px;" id="formView" class="form__captura">
+        <header>
+          <h1 style="text-align: center">Captura</h1>
+          <div class="form__options">
+            <div class="form__checkbox">
+              <label for="nuevo">Nuevo</label>
+              <input checked value="1" id="nuevo" type="radio"/>
+            </div>
+            <div>
+              <label for="modificar">Modificar</label>
+              <input value="2" id="modificar" type="radio"/>
+            </div>
+            <button id="cleanBtn">Limpiar</button>
+            <button id="saveBtn">Grabar</button>
+            <button id="deleteBtn">Eliminar</button>
+          </div>
+        </header>
+        <div class="form__fContainer">
+          <div>
+            <p id="error-clave" class="form__error noVisible">error</p>
+            <div class="form__fields">
+              <label for="clave">Clave</label>
+              <input style="width: 80px" id="clave" type="text"/>
+            </div>
+          </div>
+          <div>
+            <p id="error-nombre" class="form__error noVisible">error</p>
+            <div class="form__fields">
+              <label for="nombre">Nombre</label>
+              <input style="flex: 1" id="nombre" type="text"/>
+            </div>
+          </div>
+          <div>
+            <p id="error-apellidos" class="form__error noVisible">error</p>
+            <div class="form__fields">
+              <label for="apellidos">Apellidos</label>
+              <input style="flex: 1" id="apellidos" type="text"/>
+            </div>
+          </div>
+          <div>
+            <p id="error-sexo" class="form__error noVisible">error</p>
+            <div class="form__fields">
+              <label for="sexo">Sexo</label>
+              <select style="width: 150px" id="sexo">
+                <option selected disabled value="">Seleccionar genero</option>
+                <option value="H">Hombre</option>
+                <option value="M">Mujer</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <p id="error-limitecredito" class="form__error noVisible">error</p>
+            <div class="form__fields">
+              <label for="limite">Limite credito</label>
+              <input value="0" type="number" id="limite" min="0"/>
+            </div>
+          </div>
+          <div>
+            <p id="error-tipo" class="form__error noVisible">error</p>
+            <div class="form__fields">
+              <label for="tipo">Tipo</label>
+              <select style="width: 150px" id="tipo">
+                <option disabled selected value="">Tipo</option>
+                <option selected value="1">Joto</option>
+                <option selected value="2">Puto</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="results">
+        <table class="table table__disabled" id="results">
+          <thead>
+            <td style="width: 30px; text-align: center">*</td>
+            <td>Clave</td>
+            <td>Nombre</td>
+            <td>Apellidos</td>
+            <td>Sexo</td>
+            <td>LimiteCredito</td>
+            <td>Tipo</td>
+          </thead>
+          <tr id="1">
+            <td></td>
+            <td data-key="clave" data-value="1">1</td>
+            <td data-key="nombre" data-value="Carlos">Carlos</td>
+            <td data-key="apellidos" data-value="Perez">Peres</td>
+            <td data-key="sexo" data-value="H">H</td>
+            <td data-key="limiteCredito" data-value="12000">12000</td>
+            <td data-key="tipo" data-value="1">Extra grande</td>
+          </tr>
+          <tr id="2">
+            <td></td>
+            <td data-key="clave" data-value="2">2</td>
+            <td data-key="nombre" data-value="Carlos">Carlos</td>
+            <td data-key="apellidos" data-value="Perez">Peres</td>
+            <td data-key="sexo" data-value="H">H</td>
+            <td data-key="limiteCredito" data-value="12000">12000</td>
+            <td data-key="tipo" data-value="2">Extra grande</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </main>
+  <script type="module"  src="../scripts/captura.js"></script>
+</body>
+</html>

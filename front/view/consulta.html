@@ -9,9 +9,89 @@
 <main class="main">
     <span id="spinner" class="loader"></span>
     <div id="container" class="noVisible view">
-        <h1>Consulta</h1>
+        <form style="width: 500px;" id="formView" class="form__captura">
+            <header>
+                <h1 style="text-align: center">Consulta</h1>
+            </header>
+            <div class="form__fContainer">
+                <div>
+                    <p id="error-clave" class="form__error noVisible">error</p>
+                    <div class="form__fields">
+                        <label for="clave">Clave</label>
+                        <input style="width: 80px; text-align: center" id="clave" type="text" />
+                        <input style="width: 80px; text-align: center" id="claveIf" type="checkbox"/>
+                    </div>
+                </div>
+                <div>
+                    <p id="error-nombre" class="form__error noVisible">error</p>
+                    <div class="form__fields">
+                        <label for="nombre">Nombre</label>
+                        <input style="flex: 1" id="nombre" type="text"/>
+                        <input style="width: 80px; text-align: center" id="nombreIf" type="checkbox"/>
+                    </div>
+                </div>
+                <div>
+                    <p id="error-apellidos" class="form__error noVisible">error</p>
+                    <div class="form__fields">
+                        <label for="apellidos">Apellidos</label>
+                        <input style="flex: 1" id="apellidos" type="text"/>
+                        <input style="width: 80px; text-align: center" id="apellidosIf" type="checkbox"/>
+                    </div>
+                </div>
+                <div>
+                    <p id="error-sexo" class="form__error noVisible">error</p>
+                    <div class="form__fields">
+                        <label for="sexo">Sexo</label>
+                        <select style="width: 150px" id="sexo">
+                            <option selected disabled value="">Seleccionar genero</option>
+                            <option value="M">Hombre</option>
+                            <option value="F">Mujer</option>
+                        </select>
+                        <input style="width: 80px; text-align: center" id="sexoIf" type="checkbox"/>
+
+                    </div>
+                </div>
+                <div>
+                    <p id="error-limitecredito" class="form__error noVisible">error</p>
+                    <div class="form__fields" style="gap: 10px">
+                        <label>Limite credito</label>
+                        <input placeholder="min" type="number" id="limiteMin" min="0"/>
+                        <input placeholder="max" type="number" id="limiteMax" min="0"/>
+                        <input style="width: 80px; text-align: center" id="limiteIf" type="checkbox"/>
+                    </div>
+                </div>
+                <div>
+                    <p id="error-tipo" class="form__error noVisible">error</p>
+                    <div class="form__fields">
+                        <label for="tipo">Tipo</label>
+                        <select style="width: 150px" id="tipo">
+                            <option selected disabled value="">Seleccionar tipo</option>
+                        </select>
+                        <input style="width: 80px; text-align: center" id="tipoIf" type="checkbox"/>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="search">
+            <p>Mensaje</p>
+            <button id="searchBtn">Buscar</button>
+        </div>
+
+        <div id="resultsContainer" class="results">
+            <table class="table" id="results">
+                <thead>
+                <td style="width: 30px; text-align: center">*</td>
+                <td>Clave</td>
+                <td>Nombre</td>
+                <td>Apellidos</td>
+                <td>Sexo</td>
+                <td>LimiteCredito</td>
+                <td>Tipo</td>
+                </thead>
+            </table>
+        </div>
     </div>
 </main>
-<script type="module"  src="../scripts/captura.js"></script>
+<script type="module"  src="../scripts/consulta.js"></script>
 </body>
 </html>

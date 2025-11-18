@@ -156,6 +156,60 @@ app.delete('/api/deleteClient', async (req, res) => {
     }
 })
 
+app.post('/api/searchClient', authMiddleWare, async (req, res) => {
+    try{
+        const { client, checks } = req.body;
+        let sql = `
+            SELECT c.*, t.tipnombre
+            FROM clientes c
+            JOIN tipos t ON c.tipid = t.tipid
+        `;
+
+        const replacements = {};
+        const filtros = [];
+
+        if (checks.cNombre && client.nombre) {
+            filtros.push("c.clinombre LIKE :nombre");
+            replacements.nombre = `%${client.nombre}%`;
+        }
+        if (checks.cApellidos && client.apellidos) {
+            filtros.push("c.cliApellidos LIKE :apellidos");
+            replacements.apellidos = `%${client.apellidos}%`;
+        }
+        if (checks.cSexo && client.sexo) {
+            filtros.push("c.cliSexo LIKE :sexo");
+            replacements.sexo = `%${client.sexo}%`;
+        }
+        if (checks.cTipo && client.tipo) {
+            filtros.push("t.tipid LIKE :tipo");
+            replacements.tipo = `%${client.tipo}%`;
+        }
+
+        if (checks.cClave && client.clave) {
+            filtros.push("c.cliid = :clave");
+            replacements.clave = client.clave;
+        }
+        if (checks.cLimiteCreditos && (client.limiteCreditoMin || client.limiteCreditoMax)) {
+            filtros.push("c.cliLimiteCredito BETWEEN :creditoMin AND :creditoMax");
+            replacements.creditoMin = client.limiteCreditoMin || 0
+            replacements.creditoMax = client.limiteCreditoMax || 10000
+        }
+
+        if (filtros.length > 0) {
+            sql += " WHERE " + filtros.join(" AND ");
+        }
+
+        const resultados = await sequelize.query(sql, {
+            replacements,
+            type: QueryTypes.SELECT
+        });
+
+        res.json({result: resultados});
+    }catch(error){
+        res.status(500).json({ error: error.message });
+    }
+})
+
 
 
 export default app;

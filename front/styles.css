@@ -158,4 +158,8 @@ td{
     color: red;
     font-size: 15px;
 }
-.form__error_
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

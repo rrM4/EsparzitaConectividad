@@ -77,6 +77,7 @@ const client = {
     tipo: ""
 }
 
+
 const setInputs = (object) => {
     claveIn.value = object.clave;
     nombreIn.value = object.nombre;

@@ -18,3 +18,21 @@ export const checkAuth = async (spinner,container, loading) => {
         window.location.href="/";
     }
 }
+
+export const getAllClients = async () => {
+    try{
+        const res = await fetch('http://localhost:4000/api/getAllClients');
+        return await res.json();
+    }catch(e){
+        return e;
+    }
+}
+
+export const getTipos = async () => {
+    try{
+        const res = await fetch('http://localhost:4000/api/getTipos');
+        return await res.json();
+    }catch(e){
+        return e;
+    }
+}

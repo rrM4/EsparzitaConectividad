@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a939fcab-9414-457a-9225-75ad0dffabe0" name="Changes" comment="">
+    <list default="true" id="a939fcab-9414-457a-9225-75ad0dffabe0" name="Changes" comment="Avance esparza">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/back/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/back/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/querys.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/querys.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/scripts/captura.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/scripts/captura.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/scripts/consulta.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/scripts/consulta.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/scripts/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/scripts/helpers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/scripts/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/view/captura.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/view/captura.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/view/consulta.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/view/consulta.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,34 +41,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Node.js.app.js.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.server.js.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/angel/Desktop/personal/Esparzita/back/server.js&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/angel/.local/share/JetBrains/Toolbox/apps/webstorm/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Node.js.app.js.executor": "Debug",
+    "Node.js.server.js.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/angel/Desktop/personal/Esparzita/back/server.js",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/home/angel/.local/share/JetBrains/Toolbox/apps/webstorm/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/front/Views" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="server.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="back/server.js" working-dir="$PROJECT_DIR$">
+    <configuration name="server.js" type="NodeJSConfigurationType" nameIsGenerated="true" node-parameters="$USER_HOME$/.nvm/versions/node/v24.2.0/bin/nodemon" path-to-js-file="back/server.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
   </component>
@@ -88,22 +91,26 @@
       <workItem from="1763070921897" duration="694000" />
       <workItem from="1763147344324" duration="6847000" />
       <workItem from="1763165058980" duration="8804000" />
-      <workItem from="1763229376385" duration="10099000" />
+      <workItem from="1763229376385" duration="13307000" />
+      <workItem from="1763324173923" duration="625000" />
+      <workItem from="1763420873486" duration="16444000" />
     </task>
+    <task id="LOCAL-00001" summary="Avance esparza">
+      <option name="closed" value="true" />
+      <created>1763239585894</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1763239585894</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/back/app.js</url>
-          <line>28</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Avance esparza" />
+    <option name="LAST_COMMIT_MESSAGE" value="Avance esparza" />
   </component>
 </project>

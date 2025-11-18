@@ -61,7 +61,8 @@ button.addEventListener('click', async (e) => {
         capturaBtn.disabled = true;
         consultaBtn.disabled = true;
     }catch(err){
-
+        const message = document.getElementById('message');
+        message.textContent = err.message;
     }
 })
 

@@ -31,7 +31,7 @@
             <p id="error-clave" class="form__error noVisible">error</p>
             <div class="form__fields">
               <label for="clave">Clave</label>
-              <input style="width: 80px" id="clave" type="text"/>
+              <input disabled style="width: 80px; text-align: center" id="clave" type="text" placeholder="*" />
             </div>
           </div>
           <div>
@@ -54,8 +54,8 @@
               <label for="sexo">Sexo</label>
               <select style="width: 150px" id="sexo">
                 <option selected disabled value="">Seleccionar genero</option>
-                <option value="H">Hombre</option>
-                <option value="M">Mujer</option>
+                <option value="M">Hombre</option>
+                <option value="F">Mujer</option>
               </select>
             </div>
           </div>
@@ -71,15 +71,14 @@
             <div class="form__fields">
               <label for="tipo">Tipo</label>
               <select style="width: 150px" id="tipo">
-                <option disabled selected value="">Tipo</option>
-                <option selected value="1">Joto</option>
-                <option selected value="2">Puto</option>
+                <option selected disabled value="">Seleccionar tipo</option>
               </select>
             </div>
           </div>
         </div>
       </form>
-      <div class="results">
+      <p class="noVisible" id="messageRes"></p>
+      <div id="resultsContainer" class="results">
         <table class="table table__disabled" id="results">
           <thead>
             <td style="width: 30px; text-align: center">*</td>
@@ -90,24 +89,6 @@
             <td>LimiteCredito</td>
             <td>Tipo</td>
           </thead>
-          <tr id="1">
-            <td></td>
-            <td data-key="clave" data-value="1">1</td>
-            <td data-key="nombre" data-value="Carlos">Carlos</td>
-            <td data-key="apellidos" data-value="Perez">Peres</td>
-            <td data-key="sexo" data-value="H">H</td>
-            <td data-key="limiteCredito" data-value="12000">12000</td>
-            <td data-key="tipo" data-value="1">Extra grande</td>
-          </tr>
-          <tr id="2">
-            <td></td>
-            <td data-key="clave" data-value="2">2</td>
-            <td data-key="nombre" data-value="Carlos">Carlos</td>
-            <td data-key="apellidos" data-value="Perez">Peres</td>
-            <td data-key="sexo" data-value="H">H</td>
-            <td data-key="limiteCredito" data-value="12000">12000</td>
-            <td data-key="tipo" data-value="2">Extra grande</td>
-          </tr>
         </table>
       </div>
     </div>

@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a939fcab-9414-457a-9225-75ad0dffabe0" name="Changes" comment="Avance esparza">
+    <list default="true" id="a939fcab-9414-457a-9225-75ad0dffabe0" name="Changes" comment="Avance esparza consulta">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/scripts/captura.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/scripts/captura.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/scripts/consulta.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/scripts/consulta.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/scripts/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/view/consulta.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/view/consulta.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +90,8 @@
       <workItem from="1763229376385" duration="13307000" />
       <workItem from="1763324173923" duration="625000" />
       <workItem from="1763420873486" duration="16444000" />
-      <workItem from="1763443590973" duration="3863000" />
+      <workItem from="1763443590973" duration="4633000" />
+      <workItem from="1763509639395" duration="1459000" />
     </task>
     <task id="LOCAL-00001" summary="Avance esparza">
       <option name="closed" value="true" />
@@ -100,7 +101,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763239585894</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Avance esparza consulta">
+      <option name="closed" value="true" />
+      <created>1763447606609</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1763447606609</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,18 +117,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Avance esparza" />
-    <option name="LAST_COMMIT_MESSAGE" value="Avance esparza" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/back/app.js</url>
-          <line>159</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Avance esparza consulta" />
+    <option name="LAST_COMMIT_MESSAGE" value="Avance esparza consulta" />
   </component>
 </project>

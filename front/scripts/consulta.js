@@ -25,16 +25,6 @@ const client = {
     tipo: ""
 }
 
-const checks = {
-    cClave: false,
-    cNombre: false,
-    cApellidos: false,
-    cSexo: false,
-    cLimiteCreditos: false,
-    cTipo: false
-}
-
-
 const table = document.getElementById('results');
 const claveIn = document.getElementById('clave');
 const nombreIn = document.getElementById('nombre');
@@ -43,13 +33,6 @@ const sexoIn = document.getElementById('sexo');
 const limiteInMin = document.getElementById('limiteMin');
 const limiteInMax = document.getElementById('limiteMax');
 
-//checks
-const claveIf = document.getElementById('claveIf');
-const nombreIf = document.getElementById('nombreIf');
-const apellidosIf = document.getElementById('apellidosIf');
-const sexoIf = document.getElementById('sexoIf');
-const limiteIf = document.getElementById('limiteIf');
-const tipoIf = document.getElementById('tipoIf');
 
 const messageRes = document.getElementById('messageRes');
 const tipoIn = document.getElementById('tipo');
@@ -80,15 +63,6 @@ tipos.forEach(t => {
     tipoIn.appendChild(option);
 })
 
-const setCheckByInputs = () => {
-    checks.cClave = !!claveIf.checked;
-    checks.cNombre = !!nombreIf.checked;
-    checks.cApellidos = !!apellidosIf.checked;
-    checks.cSexo = !!sexoIf.checked;
-    checks.cLimiteCreditos = !!limiteIf.checked;
-    checks.cTipo = !!tipoIf.checked;
-}
-
 const setClientByInputs = () => {
     client.clave = claveIn.value;
     client.nombre = nombreIn.value;
@@ -102,12 +76,11 @@ const setClientByInputs = () => {
 searchBtn.addEventListener('click', async (e) => {
     e.preventDefault();
     setClientByInputs();
-    setCheckByInputs();
 
     try{
         const res = await fetch('http://localhost:4000/api/searchClient', {
             method: 'POST',
-            body: JSON.stringify({checks : checks, client : client}),
+            body: JSON.stringify({ client : client }),
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -119,7 +92,17 @@ searchBtn.addEventListener('click', async (e) => {
         if(!res.ok){
             return;
         }
-        table.innerHTML = '';
+        table.innerHTML = `
+            <thead>
+                <td style="width: 30px; text-align: center">*</td>
+                <td>Clave</td>
+                <td>Nombre</td>
+                <td>Apellidos</td>
+                <td>Sexo</td>
+                <td>LimiteCredito</td>
+                <td>Tipo</td>
+            </thead>
+        `;
 
         result.map(c => {
             const html = `
@@ -139,6 +122,4 @@ searchBtn.addEventListener('click', async (e) => {
         messageRes.textContent = e.message;
         messageRes.classList.add('form__message-f');
     }
-
-    console.log(client);
 })

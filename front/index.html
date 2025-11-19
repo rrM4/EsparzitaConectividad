@@ -8,21 +8,23 @@
 <body>
     <main class="main">
         <form class="form">
+            <p id="error-server" class="form__error noVisible"></p>
             <div class="form__input">
                 <label class="form__label" for="server">Servidor</label>
                 <input id="server" type="text" placeholder="Servidor"/>
             </div>
-
+            <p id="error-db" class="form__error noVisible"></p>
             <div class="form__input">
                 <label class="form__label" for="db">Base de datos</label>
                 <input class="form__input" id="db" type="text" placeholder="Base de datos"/>
             </div>
-
+            <p id="error-login" class="form__error noVisible"></p>
             <div class="form__input">
                 <label class="form__label" for="login">Inicio de sesion</label>
                 <input id="login" type="text" placeholder="Usuario"/>
             </div>
 
+            <p id="error-password" class="form__error noVisible"></p>
             <div class="form__input">
                 <label class="form__label" for="password">Contrasenia</label>
                 <input id="password" type="password" placeholder="Contrasenia"/>
@@ -37,7 +39,6 @@
                 <div class="form__label"></div>
                 <button id="capturaBtn" disabled class="form__button-mod" type="submit">Captura</button>
             </div>
-
             <div class="form__input">
                 <div class="form__label"></div>
                 <button id="consultaBtn" disabled class="form__button-mod" type="submit">Consulta</button>

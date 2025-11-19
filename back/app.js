@@ -104,10 +104,6 @@ app.post('/api/saveClient', authMiddleWare, async (req, res) => {
         });
         const finalId = results[0].resultadoId;
 
-        // 2. Compara con la variable 'clave' procesada
-        const message = (clave === 0)
-            ? 'Cliente creado exitosamente'
-            : 'Cliente actualizado exitosamente';
 
         const clienteGuardado = await sequelize.query(
             `SELECT * FROM clientes c
@@ -119,6 +115,12 @@ app.post('/api/saveClient', authMiddleWare, async (req, res) => {
                 type: QueryTypes.SELECT
             }
         );
+
+        // 2. Compara con la variable 'clave' procesada
+        const message = (clave === 0)
+            ? `Cliente con folio ${clienteGuardado[0].cliid} creado exitosamente`
+            : `Cliente con folio ${clienteGuardado[0].cliid} actualizado exitosamente`;
+
         res.status(200).json({
             message: message,
             client: clienteGuardado[0]
@@ -150,7 +152,7 @@ app.delete('/api/deleteClient', async (req, res) => {
                 type: QueryTypes.DELETE
             }
         );
-        res.status(200).json({ message: 'Cliente eliminado exitosamente', result });
+        res.status(200).json({ message: `Cliente con folio ${clientId} eliminado exitosamente`, result });
     }catch(e){
         res.status(500).send({error: e});
     }
@@ -168,28 +170,28 @@ app.post('/api/searchClient', authMiddleWare, async (req, res) => {
         const replacements = {};
         const filtros = [];
 
-        if (checks.cNombre && client.nombre) {
+        if (client.nombre) {
             filtros.push("c.clinombre LIKE :nombre");
             replacements.nombre = `%${client.nombre}%`;
         }
-        if (checks.cApellidos && client.apellidos) {
+        if (client.apellidos) {
             filtros.push("c.cliApellidos LIKE :apellidos");
             replacements.apellidos = `%${client.apellidos}%`;
         }
-        if (checks.cSexo && client.sexo) {
+        if (client.sexo) {
             filtros.push("c.cliSexo LIKE :sexo");
             replacements.sexo = `%${client.sexo}%`;
         }
-        if (checks.cTipo && client.tipo) {
+        if (client.tipo) {
             filtros.push("t.tipid LIKE :tipo");
             replacements.tipo = `%${client.tipo}%`;
         }
 
-        if (checks.cClave && client.clave) {
+        if (client.clave) {
             filtros.push("c.cliid = :clave");
             replacements.clave = client.clave;
         }
-        if (checks.cLimiteCreditos && (client.limiteCreditoMin || client.limiteCreditoMax)) {
+        if (client.limiteCreditoMin || client.limiteCreditoMax) {
             filtros.push("c.cliLimiteCredito BETWEEN :creditoMin AND :creditoMax");
             replacements.creditoMin = client.limiteCreditoMin || 0
             replacements.creditoMax = client.limiteCreditoMax || 10000

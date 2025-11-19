@@ -5,6 +5,11 @@ const passwordCon = document.getElementById('password');
 const button = document.getElementById('connectBtn');
 const message = document.getElementById('message');
 
+const errorServer = document.getElementById('error-server');
+const errorDb = document.getElementById('error-db');
+const errorLogin = document.getElementById('error-login');
+const errorPassword = document.getElementById('error-password');
+
 //redirect buttons
 const capturaBtn = document.getElementById('capturaBtn');
 const consultaBtn = document.getElementById('consultaBtn');
@@ -13,6 +18,8 @@ let server;
 let db;
 let login;
 let password;
+
+
 
 
 serverCon.addEventListener('change', (e) => {
@@ -28,8 +35,60 @@ passwordCon.addEventListener('change', (e) => {
     password = e.target.value;
 })
 
+const validateForm = () => {
+    let serverErrorF = false;
+    let dbErrorF = false;
+    let loginErrorF = false;
+    let passwordErrorF = false;
+
+
+    if(!server || server.trim() === ""){
+        errorServer.classList.remove('noVisible');
+        errorServer.textContent = "El server no puede ir vacio"
+        serverErrorF = true;
+    }
+
+    if(!db || db.trim() === ""){
+        errorDb.classList.remove('noVisible');
+        errorDb.textContent = "La base de datos no puede ir vacía";
+        dbErrorF = true;
+    }
+
+    if(!login || login.trim() === ""){
+        errorLogin.classList.remove('noVisible');
+        errorLogin.textContent = "El login no puede ir vacío";
+        loginErrorF = true;
+    }
+
+    if(!password || password.trim() === ""){
+        errorPassword.classList.remove('noVisible');
+        errorPassword.textContent = "El password no puede ir vacío";
+        passwordErrorF = true;
+    }
+
+    return !serverErrorF && !dbErrorF && !loginErrorF && !passwordErrorF;
+}
+
+const cleanErrors = () => {
+    errorServer.classList.add('noVisible');
+    errorServer.textContent = "";
+
+    errorDb.classList.add('noVisible');
+    errorDb.textContent = "";
+
+    errorLogin.classList.add('noVisible');
+    errorLogin.textContent = "";
+
+    errorPassword.classList.add('noVisible');
+    errorPassword.textContent = "";
+}
+
+
+
 button.addEventListener('click', async (e) => {
     e.preventDefault();
+    cleanErrors();
+    if(!validateForm()) return;
     try{
         const response = await fetch('http://localhost:4000/api/connect', {
             method: 'POST',

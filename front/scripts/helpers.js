@@ -24,7 +24,7 @@ export const getAllClients = async () => {
         const res = await fetch('http://localhost:4000/api/getAllClients');
         return await res.json();
     }catch(e){
-        return e;
+        return e.message;
     }
 }
 
@@ -33,6 +33,6 @@ export const getTipos = async () => {
         const res = await fetch('http://localhost:4000/api/getTipos');
         return await res.json();
     }catch(e){
-        return e;
+        return e.message;
     }
 }

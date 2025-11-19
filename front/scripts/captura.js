@@ -13,7 +13,6 @@ const tiposRes = await getTipos();
 const tipos = tiposRes.result;
 const clientesRes = await getAllClients();
 const clientes = clientesRes.result;
-
 //continue
 const table = document.getElementById('results');
 const claveIn = document.getElementById('clave');
@@ -46,14 +45,17 @@ const errorCredito = document.getElementById('error-limitecredito');
 const errorTipo = document.getElementById('error-tipo');
 
 //Fill all dynamic inputs
-tipos.forEach(t => {
-    const option = document.createElement('option');
-    option.text = t.tipnombre;
-    option.value = t.tipid;
-    tipoIn.appendChild(option);
-})
-clientes.forEach(c => {
-    const html = `
+if(tipos) {
+    tipos.forEach(t => {
+        const option = document.createElement('option');
+        option.text = t.tipnombre;
+        option.value = t.tipid;
+        tipoIn.appendChild(option);
+    })
+}
+if(clientes) {
+    clientes.forEach(c => {
+        const html = `
         <tr id="${c.cliid}">
             <td></td>
             <td data-key="clave" data-value="${c.cliid}">${c.cliid}</td>
@@ -64,8 +66,9 @@ clientes.forEach(c => {
             <td data-key="tipo" data-value="${c.tipid}">${c.tipnombre}</td>
       </tr>
     `
-    table.insertAdjacentHTML('beforeend', html);
-})
+        table.insertAdjacentHTML('beforeend', html);
+    })
+}
 
 //client
 const client = {
@@ -104,7 +107,6 @@ const resetClient = (resetClave = true) => {
     client.limiteCredito = 0;
     client.tipo = "";
 
-    console.log(client.clave);
     setInputs(client);
 }
 const deleteSelectedElement = () => {
